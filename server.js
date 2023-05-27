@@ -4,6 +4,7 @@ const cors = require("cors");
 const workoutRoutes = require("./routes/workouts");
 const app = express();
 const mongoose = require("mongoose");
+const PORT = process.env.PORT || 4000;
 
 // middleware
 app.use(express.json());
@@ -27,6 +28,6 @@ mongoose
 
 app.use("/api/workouts", workoutRoutes);
 
-app.listen(process.env.PORT, () => {
+app.listen(PORT, () => {
   console.log("server is running");
 });
